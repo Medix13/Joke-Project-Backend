@@ -3,11 +3,11 @@ const devpun = require("devpun");
 const app = express();
 const port = process.env.port || 3000;
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "<deployed URL>"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["http://localhost:3000", "<deployed URL>"],
+//   })
+// );
 
 const jokesDB = require("devpun/jokes.json");
 
