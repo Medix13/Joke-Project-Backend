@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "it-joke.netlify.app"],
   })
 );
 
@@ -21,7 +21,6 @@ app.get("/by-category", (req, res) => {
   const JokeCategory = req.query.name;
   if (!JokeCategory) {
     res.sendStatus(400);
-    res.sendStatus("request => /by-category?name=<category-name>");
   }
   const JokesByCategory = devpun.list(JokeCategory);
   res.json(JokesByCategory);
